@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 
+# Dicionário com os links das playlists do Spotify
 SPOTIFY_PLAYLISTS = {
     1980: "https://open.spotify.com/playlist/6oZ2DN1PAnXTvNrxaN91Bw",
     1981: "https://open.spotify.com/playlist/5NOpXpo7eO3w9bz61Cddrn",
@@ -27,16 +28,21 @@ SPOTIFY_PLAYLISTS = {
     2002: "https://open.spotify.com/playlist/5bbN3vhAiZqHO3O6UGUqpf"
 }
 
+# Configuração da interface no Streamlit
 st.title("🎵 Billboard Top Songs (1980-2002)")
 
+# Filtro de ano e mês
 anos = list(range(1980, 2003))
 meses = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
 
 ano_selecionado = st.selectbox("Selecione o Ano", anos)
 mes_selecionado = st.selectbox("Selecione o Mês", meses)
 
+# Exibir botão para acessar a playlist do Spotify do ano selecionado
 if ano_selecionado in SPOTIFY_PLAYLISTS:
-    st.markdown(f"[🎧 Ouça a playlist do ano {ano_selecionado} no Spotify]({SPOTIFY_PLAYLISTS[ano_selecionado]})")
+    st.markdown(f"[🎧 Ouça a playlist com as musicas mais tocados no ano {ano_selecionado} no Spotify]({SPOTIFY_PLAYLISTS[ano_selecionado]})")
 else:
     st.write("❌ Nenhuma playlist encontrada para este ano.")
+
+
 
