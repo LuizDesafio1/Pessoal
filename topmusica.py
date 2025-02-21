@@ -29,8 +29,8 @@ SPOTIFY_PLAYLISTS = {
 }
 
 # Configuração da interface no Streamlit
-st.title("🎵 Billboard Top Songs (1980-2002)")
-
+st.title("🎵 Músicas mais tocadas pelo Billboard (1980-2002)")
+st.subheader("Escolha o ano e acesse as músicas mais tocadas nesse período")
 # Filtro de ano e mês
 anos = list(range(1980, 2003))
 meses = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
@@ -43,6 +43,7 @@ if ano_selecionado in SPOTIFY_PLAYLISTS:
     st.markdown(f"[🎧 Ouça a playlist com as musicas mais tocados no ano {ano_selecionado} no Spotify]({SPOTIFY_PLAYLISTS[ano_selecionado]})")
 else:
     st.write("❌ Nenhuma playlist encontrada para este ano.")
+
 
 
 
